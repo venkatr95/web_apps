@@ -1,0 +1,87 @@
+.recipe-card {
+  @apply card hover:shadow-lg transition-shadow duration-200;
+}
+
+.recipe-card-image {
+  @apply w-full h-48 object-cover;
+}
+
+.recipe-card-content {
+  @apply p-4;
+}
+
+.recipe-card-header {
+  @apply flex items-center justify-between mb-2;
+}
+
+.recipe-card-difficulty {
+  @apply text-sm px-2 py-1 rounded;
+}
+
+.recipe-card-difficulty-easy {
+  @apply bg-green-100 text-green-800;
+}
+
+.recipe-card-difficulty-medium {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.recipe-card-difficulty-hard {
+  @apply bg-red-100 text-red-800;
+}
+
+.recipe-card-time {
+  @apply flex items-center text-gray-500;
+}
+
+.recipe-card-time-icon {
+  @apply w-4 h-4 mr-1;
+}
+
+.recipe-card-title {
+  @apply text-lg font-semibold text-gray-900 mb-2 hover:text-emerald-600;
+}
+
+.recipe-card-description {
+  @apply text-gray-600 text-sm mb-4 line-clamp-2;
+}
+
+.recipe-card-footer {
+  @apply flex items-center justify-between;
+}
+
+.recipe-card-author {
+  @apply flex items-center;
+}
+
+.recipe-card-author-icon {
+  @apply w-4 h-4 text-gray-500 mr-1;
+}
+
+.recipe-card-author-name {
+  @apply text-sm text-gray-600;
+}
+
+.recipe-card-actions {
+  @apply flex items-center space-x-3;
+}
+
+.recipe-card-action-button {
+  @apply flex items-center text-gray-500;
+}
+
+.recipe-card-action-button.like:hover {
+  @apply text-red-500;
+}
+
+.recipe-card-action-button.save:hover {
+  @apply text-emerald-500;
+}
+
+.recipe-card-action-icon {
+  @apply w-5 h-5;
+}
+
+.recipe-card-action-count {
+  @apply ml-1 text-sm;
+}

@@ -1,0 +1,66 @@
+.channels-list {
+  @apply space-y-1;
+}
+
+.channel-item {
+  @apply flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer transition-colors;
+}
+
+.channel-item.selected {
+  @apply bg-emerald-50;
+}
+
+.channel-avatar {
+  @apply w-12 h-12 rounded-full object-cover;
+}
+
+.channel-info {
+  @apply flex-1 ml-3;
+}
+
+.channel-name-container {
+  @apply flex items-center;
+}
+
+.channel-name {
+  @apply font-medium text-gray-900;
+}
+
+.channel-verified-icon {
+  @apply w-4 h-4 ml-1 text-emerald-600;
+}
+
+.channel-followers {
+  @apply text-sm text-gray-500;
+}
+
+.channel-follow-button {
+  @apply px-4 py-1 text-sm text-emerald-600 hover:bg-emerald-50 rounded-full;
+}
+
+.channels-discover-more {
+  @apply w-full py-3 text-center text-emerald-600 hover:bg-emerald-50 font-medium;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .channel-item {
+    @apply px-2 py-2;
+  }
+
+  .channel-avatar {
+    @apply w-10 h-10;
+  }
+
+  .channel-name {
+    @apply text-sm;
+  }
+
+  .channel-followers {
+    @apply text-xs;
+  }
+
+  .channel-follow-button {
+    @apply px-3 py-1 text-xs;
+  }
+}

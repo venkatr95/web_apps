@@ -1,0 +1,563 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  pin           String?   // 4-6 digit PIN for quick login
+  role          UserRole  @default(USER)
+  bio           String?
+  website       String?
+  location      String?
+  preferences   Json?     // {units: "metric"|"imperial", dietaryRestrictions: []}
+  
+  // New fields for adaptive recommendations
+  foodMemoryMap Json?     // Track user's habitual choices and preferences
+  ingredientScalingPrefs Json? // User's preferred scaling for spice, oil, water (1.8-2.1x)
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  recipes       Recipe[]
+  reviews       Review[]
+  favorites     Favorite[]
+  accounts      Account[]
+  sessions      Session[]
+  collections   Collection[]
+  comments      Comment[]
+  followers     Follow[]     @relation("UserFollowers")
+  following     Follow[]     @relation("UserFollowing")
+  achievements  UserAchievement[]
+  notifications Notification[]
+  shoppingLists ShoppingList[]
+  wizardStates  WizardState[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Recipe {
+  id              String         @id @default(cuid())
+  title           String
+  slug            String         @unique
+  description     String
+  imageUrl        String
+  prepTime        Int            // in minutes
+  cookTime        Int            // in minutes
+  totalTime       Int            // in minutes
+  servings        Int
+  difficulty      Difficulty
+  cuisine         CuisineType
+  category        RecipeCategoryType
+  mealCourse      MealCourse
+  country         Country
+  instructions    String         @db.Text
+  published       Boolean        @default(false)  // Changed: default to false for approval workflow
+  approved        Boolean        @default(false)  // New: admin approval status
+  featured        Boolean        @default(false)
+  views           Int            @default(0)
+  likes           Int            @default(0)
+  saves           Int            @default(0)
+  
+  // New fields for adaptive recommendations
+  pageVisits      Int            @default(0)  // Track recipe page visits
+  spiceLevel      Int?           // 1-5 scale for spice intensity
+  dietType        DietType?      // Dietary classification
+  complementRecipeIds String[]   // Array of recipe IDs that complement this dish
+  mealTypeTimeRangeStart String? // e.g., "11:30" for lunch start
+  mealTypeTimeRangeEnd   String? // e.g., "14:30" for lunch end
+  emotionTags     String[]       // e.g., ["comforting", "refreshing", "indulgent"]
+  origin          String?        // Recipe origin/region
+  
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  
+  authorId        String
+  author          User           @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  
+  categories      RecipeCategory[]
+  ingredients     Ingredient[]
+  reviews         Review[]
+  favorites       Favorite[]
+  nutritionInfo   NutritionInfo?
+  collections     CollectionRecipe[]
+  comments        Comment[]
+  shoppingListItems ShoppingListItem[]
+
+  @@index([slug])
+  @@index([authorId])
+  @@index([cuisine])
+  @@index([mealCourse])
+  @@index([country])
+  @@index([difficulty])
+  @@index([published])
+  @@index([pageVisits])
+  @@index([dietType])
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum DietType {
+  VEGETARIAN
+  VEGAN
+  NON_VEGETARIAN
+  EGGETARIAN
+  PESCATARIAN
+  GLUTEN_FREE
+  DAIRY_FREE
+  KETO
+  PALEO
+  LOW_CARB
+  HIGH_PROTEIN
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum RecipeCategoryType {
+  INDIAN_RECIPES
+  BABY_TODDLER_RECIPES
+  WORLD_RECIPES
+  DRINK_RECIPES
+  DESSERT_RECIPES
+  BASIC_ADVANCED_COOKING
+  COOKIE_BISCUIT_RECIPES
+  CAKE_RECIPES
+  SNACK_RECIPES
+}
+
+enum CuisineType {
+  INDIAN
+  CONTINENTAL
+  NORTH_INDIAN
+  BENGALI
+  MAHARASHTRIAN
+  FUSION
+  GUJARATI
+  ITALIAN
+  KARNATAKA
+  CHINESE
+  MEXICAN
+  SOUTH_INDIAN
+  ANDHRA
+  FRENCH
+  PUNJABI
+  CHETTINAD
+  GOAN
+  RAJASTHANI
+  INDO_CHINESE
+  ASIAN
+  THAI
+  MANGALOREAN
+  HYDERABADI
+  MEDITERRANEAN
+  PARSI
+  KASHMIRI
+  ORIYA
+  MUGHLAI
+  MIDDLE_EASTERN
+  KONKAN
+  NORTH_KARNATAKA
+  SINDHI
+  NORTH_EAST_INDIA
+  AFRICAN
+  UDUPI
+  SRI_LANKAN
+  HIMACHAL
+  JAPANESE
+  ASSAMESE
+  GREEK
+  BIHARI
+  EUROPEAN
+  MALVANI
+  SOUTH_KARNATAKA
+  COORG
+  COASTAL_KARNATAKA
+  LUCKNOWI
+  MALABAR
+  SICHUAN
+  NEPALESE
+  UTTAR_PRADESH
+  CARIBBEAN
+  CANTONESE
+  TAMIL_NADU
+  AWADHI
+  KONGUNADU
+  KERALA
+  JEWISH
+  KOREAN
+  BURMESE
+  VIETNAMESE
+  MALAYSIAN
+  AMERICAN
+  ARAB
+  UTTARAKHAND_NORTH_KUMAON
+  SINGAPORE
+  AFGHAN
+  BANGLADESHI
+  SHANDONG
+  BRITISH
+  NAGALAND
+  PAKISTANI
+  HUNAN
+  INDONESIAN
+  SWEDISH
+  HARYANA
+  JHARKHAND
+}
+
+enum MealCourse {
+  APPETIZER
+  DESSERT
+  ONE_POT_DISH
+  SOUTH_INDIAN_BREAKFAST
+  SIDE_DISH
+  LUNCH
+  MAIN_COURSE
+  WORLD_BREAKFAST
+  BRUNCH
+  NORTH_INDIAN_BREAKFAST
+  INDIAN_BREAKFAST
+  SNACK
+  DINNER
+}
+
+enum Country {
+  INDIA
+  ITALY
+  CHINA
+  MEXICO
+  FRANCE
+  THAILAND
+  SRI_LANKA
+  JAPAN
+  GREECE
+  NEPAL
+  KOREA
+  MYANMAR
+  VIETNAM
+  MALAYSIA
+  UNITED_STATES
+  SINGAPORE
+  AFGHANISTAN
+  BANGLADESH
+  UNITED_KINGDOM
+  PAKISTAN
+  INDONESIA
+  SWEDEN
+  OTHER
+}
+
+model Category {
+  id          String           @id @default(cuid())
+  name        String           @unique
+  slug        String           @unique
+  description String?
+  imageUrl    String?
+  recipes     RecipeCategory[]
+  
+  @@index([slug])
+}
+
+model RecipeCategory {
+  id         String   @id @default(cuid())
+  recipeId   String
+  categoryId String
+  
+  recipe     Recipe   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  
+  @@unique([recipeId, categoryId])
+  @@index([recipeId])
+  @@index([categoryId])
+}
+
+model Ingredient {
+  id       String @id @default(cuid())
+  recipeId String
+  name     String
+  amount   String
+  unit     String
+  order    Int
+  
+  recipe   Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  
+  @@index([recipeId])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int      // 1-5
+  comment   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  recipeId  String
+  recipe    Recipe   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, recipeId])
+  @@index([recipeId])
+  @@index([userId])
+}
+
+model Favorite {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  recipeId  String
+  recipe    Recipe   @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, recipeId])
+  @@index([userId])
+  @@index([recipeId])
+}
+
+model NutritionInfo {
+  id           String @id @default(cuid())
+  recipeId     String @unique
+  calories     Int
+  protein      Float
+  carbohydrates Float
+  fat          Float
+  fiber        Float?
+  sugar        Float?
+  sodium       Float?
+  cholesterol  Float?
+  vitaminA     Float?
+  vitaminC     Float?
+  vitaminD     Float?
+  vitaminB12   Float?
+  iron         Float?
+  calcium      Float?
+  potassium    Float?
+  allergens    Json?  // ["dairy", "nuts", "gluten", etc.]
+  dietaryFlags Json?  // ["vegetarian", "vegan", "gluten-free", "keto", etc.]
+  
+  recipe       Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+}
+
+model Collection {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  isPublic    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  recipes     CollectionRecipe[]
+  
+  @@index([userId])
+}
+
+model CollectionRecipe {
+  id           String     @id @default(cuid())
+  collectionId String
+  recipeId     String
+  addedAt      DateTime   @default(now())
+  notes        String?
+  
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  recipe       Recipe     @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  
+  @@unique([collectionId, recipeId])
+  @@index([collectionId])
+  @@index([recipeId])
+}
+
+model Comment {
+  id        String    @id @default(cuid())
+  content   String    @db.Text
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  recipeId  String
+  recipe    Recipe    @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  
+  parentId  String?
+  parent    Comment?  @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies   Comment[] @relation("CommentReplies")
+  
+  @@index([recipeId])
+  @@index([userId])
+  @@index([parentId])
+}
+
+model Follow {
+  id          String   @id @default(cuid())
+  followerId  String
+  followingId String
+  createdAt   DateTime @default(now())
+  
+  follower    User     @relation("UserFollowers", fields: [followerId], references: [id], onDelete: Cascade)
+  following   User     @relation("UserFollowing", fields: [followingId], references: [id], onDelete: Cascade)
+  
+  @@unique([followerId, followingId])
+  @@index([followerId])
+  @@index([followingId])
+}
+
+model Achievement {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String
+  icon        String
+  criteria    String   // JSON string with achievement criteria
+  points      Int      @default(0)
+  
+  users       UserAchievement[]
+}
+
+model UserAchievement {
+  id            String   @id @default(cuid())
+  userId        String
+  achievementId String
+  earnedAt      DateTime @default(now())
+  
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievement   Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, achievementId])
+  @@index([userId])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  type      String   // 'follow', 'comment', 'review', 'achievement'
+  content   String
+  read      Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now())
+  
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+  @@index([read])
+}
+
+model ShoppingList {
+  id        String              @id @default(cuid())
+  name      String
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
+  
+  userId    String
+  user      User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  items     ShoppingListItem[]
+  
+  @@index([userId])
+}
+
+model ShoppingListItem {
+  id             String       @id @default(cuid())
+  name           String
+  amount         String
+  unit           String
+  checked        Boolean      @default(false)
+  category       String?      // e.g., "Produce", "Dairy", "Meat"
+  
+  shoppingListId String
+  shoppingList   ShoppingList @relation(fields: [shoppingListId], references: [id], onDelete: Cascade)
+  
+  recipeId       String?
+  recipe         Recipe?      @relation(fields: [recipeId], references: [id], onDelete: SetNull)
+  
+  @@index([shoppingListId])
+}
+
+model WizardState {
+  id              String   @id @default(cuid())
+  userId          String?  // Optional: can track anonymous users via session
+  sessionId       String?  // For anonymous users
+  
+  currentStep     Int      @default(1) // 1: Initial question, 2: Ingredient/filter selection
+  dishPrompt      String?  // User's dish name or emotion-based prompt
+  selectedIngredients String[] // Array of ingredient names
+  filters         Json?    // {veg: true, spiceLevel: "medium", calorieRange: [0, 500], ...}
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  user            User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+  @@index([sessionId])
+}
+
+model IngredientCatalog {
+  id         String   @id @default(cuid())
+  name       String   @unique
+  slug       String   @unique
+  usageCount Int      @default(0) // Track how often it's used
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  
+  @@index([name])
+  @@index([usageCount])
+  @@map("ingredient_catalog")
+}

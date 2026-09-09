@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+
+  .dark {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 15, 23, 42;
+    --background-end-rgb: 15, 23, 42;
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Ensure consistent font rendering across all languages */
+  * {
+    font-variant-ligatures: common-ligatures;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* Normalize font sizes and spacing for different scripts */
+  html {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Support for various scripts */
+  html[lang="hi"],
+  html[lang="ta"],
+  html[lang="te"],
+  html[lang="kn"] {
+    word-spacing: 0.05em;
+  }
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Hide navigation, footers, and interactive elements */
+  nav,
+  footer,
+  button,
+  .no-print,
+  [role="navigation"],
+  [role="banner"] {
+    display: none !important;
+  }
+
+  /* Hide interactive recipe elements */
+  .recipe-actions,
+  .comment-form,
+  .social-share {
+    display: none !important;
+  }
+
+  /* Simplify layout */
+  .container-padding {
+    padding: 0 !important;
+  }
+
+  /* Optimize recipe content for printing */
+  .recipe-header {
+    page-break-after: avoid;
+  }
+
+  .recipe-ingredients,
+  .recipe-instructions {
+    page-break-inside: avoid;
+  }
+
+  /* Improve readability */
+  .recipe-title {
+    font-size: 24pt !important;
+    margin-bottom: 12pt !important;
+  }
+
+  .recipe-section-title {
+    font-size: 16pt !important;
+    font-weight: bold !important;
+    margin-top: 12pt !important;
+    margin-bottom: 6pt !important;
+    border-bottom: 1pt solid #333 !important;
+  }
+
+  .ingredient-item,
+  .instruction-step {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 6pt !important;
+  }
+
+  /* Show links as text with URLs */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* Don't show URLs for internal links */
+  a[href^="/"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Remove shadows and borders */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Force black text for better printing */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  td,
+  th {
+    color: black !important;
+  }
+
+  /* Optimize images for print */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Add page breaks between major sections */
+  .recipe-card,
+  .collection-item {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  /* Print shopping list optimizations */
+  .shopping-list-item {
+    page-break-inside: avoid;
+    margin-bottom: 4pt !important;
+  }
+
+  .shopping-list-category {
+    page-break-after: avoid;
+    font-weight: bold !important;
+    margin-top: 12pt !important;
+  }
+}

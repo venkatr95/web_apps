@@ -1,0 +1,27 @@
+.recipe-feed {
+  @apply space-y-8;
+}
+
+.recipe-feed-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.recipe-feed-error {
+  @apply text-center py-8;
+}
+
+.recipe-feed-error-message {
+  @apply text-red-600;
+}
+
+.recipe-feed-retry-button {
+  @apply mt-4 btn-primary;
+}
+
+.recipe-feed-loader {
+  @apply h-10;
+}
+
+.recipe-feed-end-message {
+  @apply text-center text-gray-600;
+}

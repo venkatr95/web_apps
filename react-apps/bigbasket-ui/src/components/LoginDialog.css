@@ -1,0 +1,280 @@
+.login-dialog {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.login-dialog__container {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__container {
+    flex-direction: row;
+  }
+}
+
+.login-dialog__left {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(249 250 251);
+}
+
+@media (min-width: 768px) {
+  .login-dialog__left {
+    width: 50%;
+    padding: 2rem;
+  }
+}
+
+.login-dialog__title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__title {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.login-dialog__features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__features {
+    gap: 1.5rem;
+  }
+}
+
+.login-dialog__feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.login-dialog__feature-icon {
+  width: 2rem;
+  height: 2rem;
+  background-color: rgba(132, 194, 37, 0.1);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__feature-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.login-dialog__feature-text {
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__feature-text {
+    font-size: 0.875rem;
+  }
+}
+
+.login-dialog__apps {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__apps {
+    margin-top: 3rem;
+  }
+}
+
+.login-dialog__apps-text {
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__apps-text {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.login-dialog__app-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__app-buttons {
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+}
+
+.login-dialog__app-button {
+  height: 2rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__app-button {
+    height: 2.5rem;
+  }
+}
+
+.login-dialog__right {
+  width: 100%;
+  background-color: black;
+  padding: 1rem;
+  color: white;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__right {
+    width: 50%;
+    padding: 2rem;
+  }
+}
+
+.login-dialog__close {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  color: rgb(156 163 175);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__close {
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+.login-dialog__close:hover {
+  color: white;
+}
+
+.login-dialog__form-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__form-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.login-dialog__form-subtitle {
+  font-size: 0.75rem;
+  color: rgb(156 163 175);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__form-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.login-dialog__input {
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(55 65 81);
+  padding: 0.375rem 0;
+  color: white;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__input {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+}
+
+.login-dialog__input::placeholder {
+  color: rgb(156 163 175);
+}
+
+.login-dialog__input:focus {
+  outline: none;
+  border-color: rgb(156 163 175);
+}
+
+.login-dialog__submit {
+  width: 100%;
+  background-color: #d11243;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__submit {
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+.login-dialog__submit:hover {
+  background-color: rgba(209, 18, 67, 0.9);
+}
+
+.login-dialog__terms {
+  font-size: 0.625rem;
+  color: rgb(156 163 175);
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .login-dialog__terms {
+    font-size: 0.75rem;
+    margin-top: 1rem;
+  }
+}
+
+.login-dialog__link {
+  color: rgb(209 213 219);
+  text-decoration: none;
+}
+
+.login-dialog__link:hover {
+  text-decoration: underline;
+}

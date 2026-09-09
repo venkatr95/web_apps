@@ -1,0 +1,429 @@
+{
+  "createRecipeExample": {
+    "title": "Classic Margherita Pizza",
+    "description": "A traditional Italian pizza with fresh tomatoes, mozzarella, and basil. Simple yet incredibly delicious, this recipe captures the essence of Neapolitan cuisine.",
+    "imageUrl": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002",
+    "prepTime": 20,
+    "cookTime": 15,
+    "servings": 4,
+    "difficulty": "MEDIUM",
+    "cuisine": "ITALIAN",
+    "category": "WORLD_RECIPES",
+    "mealCourse": "DINNER",
+    "country": "ITALY",
+    "instructions": "1. Preheat your oven to 475°F (245°C) with a pizza stone inside.\n2. Roll out the pizza dough on a floured surface to your desired thickness.\n3. Spread tomato sauce evenly over the dough, leaving a 1-inch border.\n4. Tear the mozzarella and distribute it evenly over the sauce.\n5. Drizzle with olive oil and season with salt.\n6. Transfer to the preheated pizza stone and bake for 12-15 minutes until crust is golden.\n7. Remove from oven and immediately top with fresh basil leaves.\n8. Let cool for 2 minutes, slice, and serve hot.",
+    "categories": ["dinner", "lunch", "main_course"],
+    "ingredients": [
+      {
+        "name": "Pizza dough",
+        "amount": "1",
+        "unit": "ball"
+      },
+      {
+        "name": "Tomato sauce",
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "name": "Fresh mozzarella",
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "name": "Fresh basil leaves",
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "name": "Olive oil",
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "spiceLevel": 1,
+    "dietType": "VEGETARIAN",
+    "emotionTags": ["comforting", "classic", "satisfying"],
+    "origin": "Naples, Italy"
+  },
+
+  "createRecipeIndianExample": {
+    "title": "Butter Chicken (Murgh Makhani)",
+    "description": "Tender chicken pieces cooked in a rich, creamy tomato-based sauce with aromatic spices. This beloved North Indian dish is perfect with naan or basmati rice.",
+    "imageUrl": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398",
+    "prepTime": 30,
+    "cookTime": 45,
+    "servings": 6,
+    "difficulty": "MEDIUM",
+    "cuisine": "NORTH_INDIAN",
+    "category": "INDIAN_RECIPES",
+    "mealCourse": "MAIN_COURSE",
+    "country": "INDIA",
+    "instructions": "1. Marinate chicken pieces in yogurt, lemon juice, ginger-garlic paste, and spices for 2 hours.\n2. Grill or pan-fry the marinated chicken until charred and cooked through. Set aside.\n3. In a large pan, heat butter and sauté onions until golden.\n4. Add ginger-garlic paste and cook for 2 minutes.\n5. Add tomato puree, red chili powder, and cook until oil separates.\n6. Add garam masala, kasuri methi, and salt.\n7. Pour in heavy cream and mix well.\n8. Add the cooked chicken and simmer for 10 minutes.\n9. Garnish with cream and fresh coriander.\n10. Serve hot with naan or rice.",
+    "categories": ["dinner", "lunch", "main_course"],
+    "ingredients": [
+      {
+        "name": "Chicken breast",
+        "amount": "2",
+        "unit": "lbs"
+      },
+      {
+        "name": "Yogurt",
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "name": "Ginger-garlic paste",
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Tomato puree",
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Heavy cream",
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Butter",
+        "amount": "4",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Garam masala",
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Kasuri methi",
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Red chili powder",
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "spiceLevel": 3,
+    "dietType": "NON_VEGETARIAN",
+    "emotionTags": ["indulgent", "comforting", "festive"],
+    "origin": "Punjab, India"
+  },
+
+  "updateRecipeExample": {
+    "title": "Classic Margherita Pizza (Updated)",
+    "description": "An authentic Neapolitan pizza with San Marzano tomatoes, buffalo mozzarella, and fresh basil. Updated with traditional techniques.",
+    "prepTime": 25,
+    "cookTime": 12,
+    "servings": 4,
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002",
+    "published": true,
+    "featured": false,
+    "spiceLevel": 1,
+    "dietType": "VEGETARIAN"
+  },
+
+  "recipeCardExample": {
+    "id": "clx123abc456def789",
+    "title": "Chicken Tikka Masala",
+    "slug": "chicken-tikka-masala",
+    "description": "Marinated chicken pieces in a creamy, spiced tomato sauce",
+    "imageUrl": "https://images.unsplash.com/photo-1565557623262-b51c2513a641",
+    "prepTime": 30,
+    "cookTime": 40,
+    "totalTime": 70,
+    "servings": 4,
+    "difficulty": "MEDIUM",
+    "cuisine": "NORTH_INDIAN",
+    "views": 1542,
+    "likes": 89,
+    "saves": 34,
+    "author": {
+      "id": "user123",
+      "name": "Chef Priya",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+    },
+    "averageRating": 4.7,
+    "reviewCount": 23,
+    "isFavorited": true
+  },
+
+  "recipeWithRelationsExample": {
+    "id": "clx123abc456def789",
+    "title": "Masala Dosa",
+    "slug": "masala-dosa",
+    "description": "Crispy rice and lentil crepe filled with spiced potato mixture, served with sambar and chutney",
+    "imageUrl": "https://images.unsplash.com/photo-1630383249896-424e482df921",
+    "prepTime": 30,
+    "cookTime": 20,
+    "totalTime": 50,
+    "servings": 4,
+    "difficulty": "MEDIUM",
+    "cuisine": "SOUTH_INDIAN",
+    "category": "INDIAN_RECIPES",
+    "mealCourse": "SOUTH_INDIAN_BREAKFAST",
+    "country": "INDIA",
+    "instructions": "1. Soak rice and lentils overnight.\n2. Grind to a smooth batter and ferment for 8-12 hours.\n3. Prepare potato filling with onions, mustard seeds, and spices.\n4. Heat a griddle and spread the batter thinly.\n5. Cook until crispy, add filling, and fold.\n6. Serve hot with sambar and coconut chutney.",
+    "published": true,
+    "featured": true,
+    "views": 3421,
+    "likes": 234,
+    "saves": 89,
+    "pageVisits": 3421,
+    "spiceLevel": 3,
+    "dietType": "VEGETARIAN",
+    "complementRecipeIds": ["recipe-sambar-001", "recipe-coconut-chutney-002"],
+    "mealTypeTimeRangeStart": "07:00",
+    "mealTypeTimeRangeEnd": "11:00",
+    "emotionTags": ["traditional", "satisfying", "energizing"],
+    "origin": "Karnataka, India",
+    "createdAt": "2024-12-15T08:30:00.000Z",
+    "updatedAt": "2024-12-20T14:22:00.000Z",
+    "authorId": "user456",
+    "author": {
+      "id": "user456",
+      "name": "Chef Lakshmi",
+      "email": "lakshmi@example.com",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956"
+    },
+    "ingredients": [
+      {
+        "id": "ing001",
+        "name": "Rice",
+        "amount": "2",
+        "unit": "cups",
+        "recipeId": "clx123abc456def789"
+      },
+      {
+        "id": "ing002",
+        "name": "Urad dal",
+        "amount": "1",
+        "unit": "cup",
+        "recipeId": "clx123abc456def789"
+      },
+      {
+        "id": "ing003",
+        "name": "Potatoes",
+        "amount": "4",
+        "unit": "medium",
+        "recipeId": "clx123abc456def789"
+      },
+      {
+        "id": "ing004",
+        "name": "Mustard seeds",
+        "amount": "1",
+        "unit": "tsp",
+        "recipeId": "clx123abc456def789"
+      },
+      {
+        "id": "ing005",
+        "name": "Curry leaves",
+        "amount": "10",
+        "unit": "leaves",
+        "recipeId": "clx123abc456def789"
+      }
+    ],
+    "categories": [
+      {
+        "id": "cat001",
+        "name": "Breakfast",
+        "recipeId": "clx123abc456def789"
+      },
+      {
+        "id": "cat002",
+        "name": "South Indian",
+        "recipeId": "clx123abc456def789"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "rev001",
+        "rating": 5,
+        "comment": "Absolutely delicious! The dosa was perfectly crispy and the filling was flavorful.",
+        "createdAt": "2024-12-18T10:30:00.000Z",
+        "updatedAt": "2024-12-18T10:30:00.000Z",
+        "userId": "user789",
+        "recipeId": "clx123abc456def789",
+        "user": {
+          "id": "user789",
+          "name": "Raj Kumar",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "id": "com001",
+        "content": "Can I use brown rice instead of white rice?",
+        "createdAt": "2024-12-19T14:20:00.000Z",
+        "updatedAt": "2024-12-19T14:20:00.000Z",
+        "userId": "user101",
+        "recipeId": "clx123abc456def789",
+        "user": {
+          "id": "user101",
+          "name": "Anita Singh",
+          "image": null
+        }
+      }
+    ],
+    "nutritionInfo": {
+      "id": "nut001",
+      "recipeId": "clx123abc456def789",
+      "calories": 320,
+      "protein": 8,
+      "carbs": 58,
+      "fat": 6,
+      "fiber": 4,
+      "sugar": 3,
+      "sodium": 280,
+      "servingSize": "1 dosa"
+    },
+    "isFavorited": true,
+    "reviewCount": 15,
+    "averageRating": 4.6
+  },
+
+  "recipePaginationExample": {
+    "recipes": [
+      {
+        "id": "recipe001",
+        "title": "Palak Paneer",
+        "slug": "palak-paneer",
+        "description": "Cottage cheese cubes in a creamy spinach gravy",
+        "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950",
+        "prepTime": 15,
+        "cookTime": 25,
+        "totalTime": 40,
+        "servings": 4,
+        "difficulty": "EASY",
+        "cuisine": "NORTH_INDIAN",
+        "views": 890,
+        "likes": 45,
+        "saves": 23,
+        "author": {
+          "id": "user001",
+          "name": "Chef Meera",
+          "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+        },
+        "averageRating": 4.5,
+        "reviewCount": 12
+      },
+      {
+        "id": "recipe002",
+        "title": "Hyderabadi Biryani",
+        "slug": "hyderabadi-biryani",
+        "description": "Aromatic rice layered with spiced meat and herbs",
+        "imageUrl": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8",
+        "prepTime": 45,
+        "cookTime": 60,
+        "totalTime": 105,
+        "servings": 6,
+        "difficulty": "HARD",
+        "cuisine": "HYDERABADI",
+        "views": 2145,
+        "likes": 156,
+        "saves": 78,
+        "author": {
+          "id": "user002",
+          "name": "Chef Arif",
+          "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+        },
+        "averageRating": 4.9,
+        "reviewCount": 34
+      }
+    ],
+    "total": 248,
+    "page": 1,
+    "pageSize": 24,
+    "totalPages": 11
+  },
+
+  "recipeFilterExample": {
+    "search": "chicken curry",
+    "cuisine": "NORTH_INDIAN",
+    "difficulty": "MEDIUM",
+    "dietType": "NON_VEGETARIAN",
+    "mealCourse": "DINNER",
+    "country": "INDIA",
+    "categories": ["dinner", "main_course"],
+    "minPrepTime": 15,
+    "maxPrepTime": 45,
+    "minCookTime": 20,
+    "maxCookTime": 60,
+    "spiceLevel": 3,
+    "featured": true,
+    "published": true
+  },
+
+  "recipeRecommendationExample": {
+    "id": "recipe789",
+    "title": "Chole Bhature",
+    "slug": "chole-bhature",
+    "description": "Spicy chickpea curry served with fluffy fried bread",
+    "imageUrl": "https://images.unsplash.com/photo-1626074353765-517a681e40be",
+    "prepTime": 30,
+    "cookTime": 45,
+    "totalTime": 75,
+    "servings": 4,
+    "difficulty": "MEDIUM",
+    "cuisine": "PUNJABI",
+    "views": 1823,
+    "likes": 102,
+    "saves": 56,
+    "author": {
+      "id": "user345",
+      "name": "Chef Harpreet",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
+    },
+    "averageRating": 4.7,
+    "reviewCount": 28,
+    "isFavorited": false,
+    "score": 0.87,
+    "reason": "Based on your preference for North Indian spicy dishes"
+  },
+
+  "collectionWithRecipesExample": {
+    "id": "col001",
+    "name": "Quick Weeknight Dinners",
+    "description": "Fast and easy recipes for busy weeknights",
+    "visibility": "PUBLIC",
+    "userId": "user123",
+    "createdAt": "2024-12-01T10:00:00.000Z",
+    "updatedAt": "2024-12-20T15:30:00.000Z",
+    "recipes": [
+      {
+        "id": "recipe101",
+        "title": "One-Pan Pasta Primavera",
+        "slug": "one-pan-pasta-primavera",
+        "description": "Fresh vegetables and pasta cooked together in one pan",
+        "imageUrl": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9",
+        "prepTime": 10,
+        "cookTime": 15,
+        "totalTime": 25,
+        "servings": 4,
+        "difficulty": "EASY",
+        "cuisine": "ITALIAN",
+        "views": 456,
+        "likes": 34,
+        "saves": 28,
+        "author": {
+          "id": "user123",
+          "name": "Chef Maria",
+          "image": null
+        },
+        "averageRating": 4.3,
+        "reviewCount": 8
+      }
+    ],
+    "recipeCount": 12
+  }
+}

@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.local
+**/.env.local
+!**/.env.local.example
+!**/.env.example
+
+# Node / Next.js
+client/node_modules/
+client/.next/
+client/out/
+client/.vercel/
+client/.env.local
+client/.env*.local
+npm-debug.log*
+yarn-error.log*
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Capture.JPG
+
+# Runtime
+*.log
+.pytest_cache/
+.mypy_cache/

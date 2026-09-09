@@ -1,0 +1,51 @@
+.skeleton-card {
+  @apply card animate-pulse;
+}
+
+.skeleton-image {
+  @apply w-full h-48 bg-gray-200;
+}
+
+.skeleton-content {
+  @apply p-4;
+}
+
+.skeleton-header {
+  @apply flex items-center justify-between mb-2;
+}
+
+.skeleton-difficulty {
+  @apply w-16 h-6 bg-gray-200 rounded;
+}
+
+.skeleton-time {
+  @apply w-20 h-6 bg-gray-200 rounded;
+}
+
+.skeleton-title {
+  @apply w-3/4 h-6 bg-gray-200 rounded mb-2;
+}
+
+.skeleton-description-line {
+  @apply w-full h-4 bg-gray-200 rounded mb-2;
+}
+
+.skeleton-description-line-short {
+  @apply w-2/3 h-4 bg-gray-200 rounded mb-4;
+}
+
+.skeleton-footer {
+  @apply flex items-center justify-between;
+}
+
+.skeleton-author {
+  @apply w-32 h-6 bg-gray-200 rounded;
+}
+
+.skeleton-actions {
+  @apply flex space-x-3;
+}
+
+.skeleton-action {
+  @apply w-16 h-6 bg-gray-200 rounded;
+}

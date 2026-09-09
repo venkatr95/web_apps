@@ -1,0 +1,27 @@
+.header {
+  @apply sticky top-0 z-50 bg-white border-b;
+}
+
+.container {
+  @apply container mx-auto px-4 py-4;
+}
+
+.logo {
+  @apply flex items-center text-[#FF385C];
+}
+
+.searchBar {
+  @apply hidden md:flex items-center border rounded-full py-2 px-4 shadow-sm hover:shadow-md transition cursor-pointer;
+}
+
+.userMenu {
+  @apply flex items-center space-x-4;
+}
+
+.expandedSearch {
+  @apply flex justify-center;
+}
+
+.searchWidget {
+  @apply flex items-center bg-white border rounded-full p-2 shadow-lg hover:shadow-xl transition cursor-pointer;
+}

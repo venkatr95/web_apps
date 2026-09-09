@@ -1,0 +1,11 @@
+.container {
+  @apply relative;
+}
+
+.input {
+  @apply w-full p-2 border rounded-lg;
+}
+
+.calendar {
+  @apply absolute top-full left-0 z-50 bg-white shadow-lg rounded-lg mt-1;
+}

@@ -1,0 +1,124 @@
+.channels-sidebar {
+  @apply flex flex-col h-screen bg-white border-r border-gray-200 transition-all duration-300 relative;
+  width: 400px;
+}
+
+.channels-sidebar.collapsed {
+  @apply w-20;
+}
+
+.channels-collapse-button {
+  @apply absolute -right-3 top-20 bg-white border border-gray-200 rounded-full p-1 cursor-pointer z-10 text-gray-600 hover:text-gray-900;
+}
+
+.channels-toolbar {
+  @apply flex flex-col items-center py-4 space-y-4;
+}
+
+.toolbar-button {
+  @apply w-12 h-12 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 transition-colors;
+}
+
+.toolbar-button.active {
+  @apply text-emerald-600 bg-emerald-50;
+}
+
+.toolbar-icon {
+  @apply w-6 h-6;
+}
+
+.channels-header {
+  @apply flex items-center justify-between px-4 py-3 bg-emerald-600;
+}
+
+.channels-title {
+  @apply text-xl font-semibold text-white;
+}
+
+.channels-add-button {
+  @apply w-8 h-8 flex items-center justify-center text-2xl text-white hover:bg-emerald-700 rounded-full;
+}
+
+.channels-search {
+  @apply relative px-4 py-2 bg-gray-50;
+}
+
+.channels-search-icon {
+  @apply absolute left-6 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400;
+}
+
+.channels-search-input {
+  @apply w-full pl-10 pr-4 py-2 bg-white rounded-lg border border-gray-200 focus:outline-none focus:border-emerald-500;
+}
+
+.channels-nav {
+  @apply flex flex-col px-2 py-2 border-b border-gray-200;
+}
+
+.channels-nav-item {
+  @apply flex items-center px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100;
+}
+
+.channels-nav-item.active {
+  @apply bg-emerald-50 text-emerald-600;
+}
+
+.channels-nav-icon {
+  @apply w-5 h-5 mr-3;
+}
+
+.channels-nav-text {
+  @apply transition-opacity duration-200;
+}
+
+.channels-section {
+  @apply flex-1 overflow-y-auto;
+}
+
+.channels-section-title {
+  @apply px-4 py-3 text-sm font-medium text-gray-500;
+}
+
+.channels-footer {
+  @apply px-4 py-3 border-t border-gray-200;
+}
+
+.channels-settings {
+  @apply p-2 text-gray-600 hover:bg-gray-100 rounded-full transition-colors;
+}
+
+.channels-settings.active {
+  @apply bg-emerald-50 text-emerald-600;
+}
+
+.channels-settings-icon {
+  @apply w-6 h-6;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .channels-sidebar {
+    width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .channels-sidebar {
+    @apply fixed inset-y-0 left-0 z-30;
+    width: 280px;
+  }
+
+  .channels-sidebar.collapsed {
+    @apply -translate-x-full;
+  }
+
+  .channels-collapse-button {
+    @apply hidden;
+  }
+}
+
+@media (max-width: 640px) {
+  .channels-sidebar {
+    width: 100%;
+  }
+}

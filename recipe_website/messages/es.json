@@ -1,0 +1,364 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "recipes": "Recetas",
+    "about": "Acerca de",
+    "collections": "Colecciones",
+    "favorites": "Favoritos",
+    "shoppingLists": "Listas de Compras",
+    "profile": "Perfil",
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "signOut": "Cerrar Sesión"
+  },
+  "home": {
+    "hero": {
+      "title": "Descubre Tu Próxima Receta Favorita",
+      "subtitle": "Recomendaciones de recetas personalizadas basadas en tus preferencias, necesidades dietéticas y lo que tienes a mano.",
+      "getStarted": "Comenzar",
+      "browseRecipes": "Explorar Recetas"
+    },
+    "features": {
+      "title": "¿Por Qué Elegir RecipeHub?",
+      "smartWizard": {
+        "title": "Asistente Inteligente de Recetas",
+        "description": "Responde algunas preguntas y obtén recomendaciones de recetas personalizadas según tu gusto."
+      },
+      "ingredientSearch": {
+        "title": "Búsqueda por Ingredientes",
+        "description": "Encuentra recetas basadas en ingredientes que ya tienes en tu cocina."
+      },
+      "community": {
+        "title": "Comunidad Vibrante",
+        "description": "Comparte tus creaciones, sigue a otros entusiastas de la comida y descubre recetas en tendencia."
+      },
+      "mealPlanning": {
+        "title": "Planificación de Comidas",
+        "description": "Organiza recetas en colecciones y crea listas de compras con cálculo automático de ingredientes."
+      }
+    },
+    "popularRecipes": "Recetas Populares",
+    "viewAll": "Ver Todas las Recetas",
+    "categories": {
+      "title": "Explorar por Categoría",
+      "subtitle": "Explore recetas organizadas por tipo de comida, cocina y preferencias dietéticas"
+    },
+    "cta": {
+      "title": "¿Listo para compartir tus recetas?",
+      "description": "Únete a nuestra comunidad de cocineros apasionados y entusiastas de la comida. Comparte tus recetas favoritas e inspira a otros.",
+      "joinButton": "Únete a RecipeHub Hoy"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Acerca de RecipeHub",
+      "subtitle": "Revolucionando la cocina casera con descubrimiento inteligente de recetas y planificación de comidas"
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "RecipeHub está construido para hacer la cocina más accesible, agradable y personalizada. Creemos que todos merecen descubrir recetas que coincidan con sus gustos únicos, necesidades dietéticas y estilo de vida - sin la molestia de búsquedas interminables."
+    },
+    "features": {
+      "title": "Lo Que Nos Hace Especiales",
+      "personalized": {
+        "title": "Experiencia Personalizada",
+        "description": "Nuestro sistema de recomendación inteligente aprende tus preferencias para sugerir recetas que te encantarán."
+      },
+      "wizard": {
+        "title": "Asistente Inteligente de Recetas",
+        "description": "Responde algunas preguntas simples y descubre recetas adaptadas a tus necesidades, ingredientes y restricciones dietéticas."
+      },
+      "community": {
+        "title": "Impulsado por la Comunidad",
+        "description": "Comparte tus creaciones culinarias, sigue a otros entusiastas de la comida y participa en una comunidad apasionada por la cocina."
+      },
+      "adaptive": {
+        "title": "Aprendizaje Adaptativo",
+        "description": "Cuanto más interactúas con RecipeHub, mejores serán nuestras recomendaciones para coincidir con tu gusto."
+      }
+    },
+    "technology": {
+      "title": "Construido con Tecnología Moderna",
+      "description": "Aprovechando tecnologías web de vanguardia para una experiencia de usuario rápida, confiable y encantadora."
+    },
+    "cta": {
+      "title": "¿Listo para Transformar Tu Cocina?",
+      "description": "Únete a miles de cocineros caseros que descubren sus próximas recetas favoritas cada día.",
+      "startCooking": "Comenzar a Cocinar",
+      "exploreRecipes": "Explorar Recetas"
+    }
+  },
+  "recipes": {
+    "title": "Todas las Recetas",
+    "search": "Buscar recetas...",
+    "filters": "Filtros",
+    "category": "Categoría",
+    "sortBy": "Ordenar por",
+    "newest": "Más Recientes",
+    "popular": "Populares",
+    "rating": "Calificación",
+    "cookTime": "Tiempo de Cocción",
+    "noRecipes": "No se encontraron recetas",
+    "createRecipe": "Crear Receta",
+    "viewRecipe": "Ver Receta",
+    "editRecipe": "Editar Receta",
+    "deleteRecipe": "Eliminar Receta",
+    "servings": "Porciones",
+    "prepTime": "Tiempo de Preparación",
+    "totalTime": "Tiempo Total",
+    "difficulty": "Dificultad",
+    "cuisine": "Cocina",
+    "dietaryRestrictions": "Restricciones Dietéticas"
+  },
+  "recipeWizard": {
+    "title": "Asistente de Recetas",
+    "subtitle": "Encuentra tu receta perfecta en solo unos pasos",
+    "notSure": "¿No sabes qué cocinar?",
+    "tellIngredients": "Cuéntanos los ingredientes que tienes",
+    "promptPlaceholder": "p. ej., \"Pasta Carbonara\" o \"algo reconfortante y picante\"",
+    "ingredientsLabel": "Tus Ingredientes",
+    "suggestedIngredients": "Ingredientes sugeridos que combinan bien:",
+    "filtersTitle": "Filtros",
+    "dietType": "Tipo de Dieta",
+    "mealType": "Tipo de Comida",
+    "spiceLevel": "Nivel de Picante",
+    "maxPrepTime": "Tiempo Máximo de Preparación",
+    "any": "Cualquiera",
+    "spice": {
+      "mild": "Suave",
+      "moderate": "Moderado",
+      "mediumSpicy": "Picante Medio",
+      "hot": "Picante",
+      "veryHot": "Muy Picante"
+    },
+    "step1": {
+      "title": "¿Qué ingredientes tienes?",
+      "placeholder": "Escribe ingredientes...",
+      "description": "Ingresa ingredientes que te gustaría usar"
+    },
+    "step2": {
+      "title": "¿Qué tipo de comida estás planeando?",
+      "breakfast": "Desayuno",
+      "lunch": "Almuerzo",
+      "dinner": "Cena",
+      "snack": "Aperitivo",
+      "dessert": "Postre"
+    },
+    "step3": {
+      "title": "¿Alguna restricción dietética?",
+      "vegetarian": "Vegetariano",
+      "vegan": "Vegano",
+      "glutenFree": "Sin Gluten",
+      "dairyFree": "Sin Lácteos",
+      "nutFree": "Sin Frutos Secos",
+      "none": "Ninguna"
+    },
+    "step4": {
+      "title": "¿Cuánto tiempo tienes?",
+      "under15": "Menos de 15 minutos",
+      "under30": "Menos de 30 minutos",
+      "under60": "Menos de 60 minutos",
+      "over60": "Más de 60 minutos"
+    },
+    "step5": {
+      "title": "¿Cuál es tu nivel de cocina?",
+      "beginner": "Principiante",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    },
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "findRecipes": "Encontrar Recetas",
+    "startOver": "Comenzar de Nuevo"
+  },
+  "footer": {
+    "title": "RecipeHub",
+    "description": "Tu destino para descubrir y compartir deliciosas recetas.",
+    "explore": "Explorar",
+    "browseRecipes": "Explorar Recetas",
+    "collections": "Colecciones",
+    "about": "Acerca de",
+    "account": "Cuenta",
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "profile": "Perfil",
+    "followUs": "Síguenos",
+    "community": "Mantente conectado con nuestra comunidad",
+    "copyright": "© {year} RecipeHub. Todos los derechos reservados."
+  },
+  "auth": {
+    "signIn": {
+      "title": "Iniciar Sesión",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "rememberMe": "Recuérdame",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "submit": "Iniciar Sesión",
+      "noAccount": "¿No tienes una cuenta?",
+      "signUpLink": "Regístrate aquí",
+      "orContinueWith": "O continuar con"
+    },
+    "signUp": {
+      "title": "Registrarse",
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar Contraseña",
+      "submit": "Registrarse",
+      "haveAccount": "¿Ya tienes una cuenta?",
+      "signInLink": "Inicia sesión aquí",
+      "terms": "Al registrarte, aceptas nuestros Términos de Servicio y Política de Privacidad"
+    }
+  },
+  "profile": {
+    "myRecipes": "Mis Recetas",
+    "myCollections": "Mis Colecciones",
+    "myFavorites": "Mis Favoritos",
+    "followers": "Seguidores",
+    "following": "Siguiendo",
+    "editProfile": "Editar Perfil",
+    "follow": "Seguir",
+    "unfollow": "Dejar de Seguir",
+    "settings": "Configuración"
+  },
+  "collections": {
+    "title": "Colecciones",
+    "create": "Crear Colección",
+    "edit": "Editar Colección",
+    "delete": "Eliminar Colección",
+    "addRecipe": "Agregar Receta",
+    "removeRecipe": "Eliminar Receta",
+    "name": "Nombre de la Colección",
+    "description": "Descripción",
+    "visibility": "Visibilidad",
+    "public": "Pública",
+    "private": "Privada",
+    "noCollections": "Aún no hay colecciones",
+    "createFirst": "Crea tu primera colección"
+  },
+  "shoppingList": {
+    "title": "Listas de Compras",
+    "create": "Crear Lista de Compras",
+    "edit": "Editar Lista de Compras",
+    "delete": "Eliminar Lista de Compras",
+    "addItem": "Agregar Artículo",
+    "removeItem": "Eliminar Artículo",
+    "markComplete": "Marcar como Completo",
+    "name": "Nombre de la Lista",
+    "noLists": "Aún no hay listas de compras",
+    "createFirst": "Crea tu primera lista de compras"
+  },
+  "comments": {
+    "title": "Comentarios",
+    "add": "Agregar Comentario",
+    "edit": "Editar Comentario",
+    "delete": "Eliminar Comentario",
+    "reply": "Responder",
+    "noComments": "Aún no hay comentarios",
+    "beFirst": "Sé el primero en comentar"
+  },
+  "common": {
+    "add": "Agregar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "update": "Actualizar",
+    "submit": "Enviar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "confirm": "Confirmar",
+    "yes": "Sí",
+    "no": "No",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "close": "Cerrar",
+    "open": "Abrir",
+    "view": "Ver",
+    "share": "Compartir",
+    "print": "Imprimir",
+    "download": "Descargar",
+    "upload": "Subir"
+  },
+  "notifications": {
+    "title": "Notificaciones",
+    "markAllRead": "Marcar Todas como Leídas",
+    "noNotifications": "No hay notificaciones",
+    "newFollower": "comenzó a seguirte",
+    "newComment": "comentó en tu receta",
+    "newLike": "le gustó tu receta",
+    "recipeAdded": "agregó una nueva receta"
+  },
+  "admin": {
+    "pendingRecipes": {
+      "title": "Recetas Pendientes",
+      "subtitle": "{count, plural, =0 {No hay recetas pendientes de aprobación} one {1 receta pendiente de aprobación} other {# recetas pendientes de aprobación}}",
+      "noRecipes": {
+        "title": "¡Todo al día!",
+        "description": "No hay recetas pendientes de aprobación en este momento."
+      },
+      "submittedOn": "Enviado el",
+      "minutes": "min",
+      "servings": "porciones",
+      "author": "Autor",
+      "approve": "Aprobar",
+      "approving": "Aprobando...",
+      "reject": "Rechazar",
+      "rejecting": "Rechazando...",
+      "view": "Ver",
+      "rejectDialog": {
+        "title": "Rechazar Receta",
+        "description": "Por favor proporcione una razón para rechazar esta receta. El autor será notificado.",
+        "placeholder": "Ingrese motivo de rechazo..."
+      },
+      "confirmReject": "Confirmar Rechazo",
+      "cancel": "Cancelar"
+    }
+  },
+  "aiGenerator": {
+    "title": "Generador de Recetas con IA",
+    "tabs": {
+      "recipe": "RECETA",
+      "menu": "MENÚ"
+    },
+    "methodTitle": "¿Cómo te gustaría generar tu receta?",
+    "tooltips": {
+      "random": "Deja que la IA cree aleatoriamente por ti",
+      "text": "Especifica un nombre de receta o descripción",
+      "parameters": "Generar con parámetros",
+      "image": "Imagen (Premium)"
+    },
+    "textPlaceholder": "Ingresa un nombre de receta o describe lo que te gustaría preparar",
+    "parameters": {
+      "title": "Usa parámetros para crear una receta",
+      "typeOfFood": "Elige el tipo de comida",
+      "cuisine": "Elige una cocina",
+      "extraLabel": "Elige una etiqueta extra",
+      "ingredients": "Elige ingredientes",
+      "note": "Todos los parámetros son opcionales y pueden dejarse en blanco."
+    },
+    "quality": {
+      "basic": "BÁSICO",
+      "plus": "PLUS"
+    },
+    "premium": "Prem",
+    "actions": {
+      "generateRecipe": "GENERAR RECETA",
+      "generateMenu": "GENERAR MENÚ",
+      "purchaseCredits": "COMPRAR CRÉDITOS"
+    },
+    "notes": {
+      "publicRecipes": "*Las recetas son públicas. Obtén créditos para modo privado y funciones premium.",
+      "menuCost": "*Cada receta del menú cuesta 1 crédito para generarse."
+    },
+    "empty": {
+      "recipes": "Aún no se han creado recetas. Usa el formulario a la izquierda para comenzar a generar tus propias recetas.",
+      "menus": "Aún no se han creado menús. Usa el formulario a la izquierda para comenzar a generar tus propios menús."
+    }
+  }
+}

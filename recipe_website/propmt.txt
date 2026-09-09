@@ -1,0 +1,215 @@
+You are a senior Next.js 14+ engineer. Build a production-quality, responsive recipe website inspired by cookaifood.com/recipes. Use TypeScript, Next.js 16+ App Router, Server Components by default, Tailwind CSS for styling, Prisma with PostgreSQL for data, NextAuth for auth, and Vercel for deployment. Prioritize performance (SSR/SSG/ISR), accessibility, SEO, and DX. Include unit and e2e tests.
+
+High-level goals:
+
+Recipe discovery grid with filters, search, sorting, and pagination.
+Detailed recipe page with ingredients, steps, timers, nutrition, yield scaling, unit toggles, and a focused “Cook Mode.”
+User features: sign-in, favorites, ratings/reviews, shopping list, and collections.
+Admin backoffice to manage recipes, tags, categories, and moderation.
+Fast, accessible, SEO-optimized, and mobile-first UI.
+Tech stack and constraints:
+
+Next.js 16+ App Router (server components by default; client components only where interactivity is needed).
+TypeScript everywhere. ESLint + Prettier configured.
+Tailwind CSS + shadcn/ui components for consistent design.
+Database: PostgreSQL via Prisma ORM. Seed data included.
+Auth: NextAuth with email/password using JWT role based authentication for user/admin with SMTP and nodemailer
+(Registration shall be successful by sending an email to the registered user on email, also add a set pin form for the user
+to login using pin)
+Image storage: Cloudinary (server-side image optimization via next/image).
+Search: start with PostgreSQL full-text search; structure code so Algolia can be swapped later.
+Caching: Incremental Static Regeneration for listing pages; route segment caching; revalidate paths on recipe changes.
+Analytics: PostHog or Vercel Analytics.
+Testing: Jest or Vitest for unit tests, Playwright for e2e.
+CI: GitHub Actions workflow for lint, type-check, tests.
+Deployment: Vercel. Include vercel.json as needed.
+Pages and routes (App Router):
+
+/ Home with featured collections, popular recipes, and categories.
+/recipes Grid of recipes with server-side filters, sort, search, pagination; supports SSR + ISR.
+/recipes/[slug] Recipe detail page; static generation with ISR and on-demand revalidation.
+/tags/[slug] Tag filtered listing.
+/categories/[slug] Category filtered listing.
+/cuisines/[slug] Cuisine filtered listing.
+/authors/[username] Author profile and recipes.
+/collections Public collections; detail pages at /collections/[slug].
+/submit Authenticated recipe submission form with moderation.
+/favorites User’s saved recipes.
+/shopping-list Ingredient list aggregated from favorited/selected recipes; printable.
+/search Search results page; also support query params on /recipes.
+/api/* API routes for recipes, search, favorites, reviews, uploads.
+/admin Admin dashboard with CRUD for recipes, tags, categories, ingredients, and moderation.
+Key features and UI details:
+
+Header: logo, global search input, navigation (Recipes, Collections, Submit), auth menu. Mobile-friendly with drawer.
+Recipe listing:
+Server-side filters: Recipe Category (9 main categories), Cuisine Type (70+ options), Meal Course (13 options), Country, Diet (e.g., vegetarian, vegan, gluten-free), Difficulty, Time (prep/cook/total), Tags, Rating, Nutrition (low-calorie, high-protein, low-carb, keto-friendly filters based on nutrition data).
+Sort: Most recent, Most popular, Rating, Time (asc/desc), Likes, Saves, Calories (low to high).
+Pagination with SSR (cursor-based or page-based); maintain SEO-friendly URLs and canonical tags.
+Grid cards: image, title, short description, badges (category, cuisine, meal course, difficulty), rating, total time, calorie count badge, likes count, saves count. Skeleton loaders.
+Quick action icons on cards: YouTube icon, grocery cart icon (Swiggy/Blinkit), Uber Eats icon, PDF download icon, and share icon for quick access.
+Search:
+Query across title, description, ingredients, tags using Postgres full-text search.
+Highlight matches. Debounced client-side input; server-side fetch.
+API: /api/search accepts q, filters, sort; returns paginated results.
+Recipe detail page:
+Hero: cover image, title, author, rating, servings, total time, tags, share buttons.
+Quick Actions Bar (prominent): 
+  - "Find on YouTube" button: opens YouTube search with recipe title in new tab (https://www.youtube.com/results?search_query=[recipe_title])
+  - "Order Ingredients" button with dropdown: Quick order all ingredients via Swiggy Instamart, Blinkit, or Uber Eats deep links. Generate ingredient list and open respective app/website with pre-filled cart if API available, otherwise open with search query.
+  - "Order on Uber Eats" button: Search for the recipe/dish on Uber Eats to order from nearby restaurants. Opens Uber Eats app/website with recipe title search (https://www.ubereats.com/search?q=[recipe_title]).
+  - "Download PDF" button: Generate beautifully formatted PDF with recipe title, image, ingredients, instructions, nutrition facts, and tips. Use @react-pdf/renderer or puppeteer for server-side PDF generation.
+  - "Share" button with social media options: Email (mailto with recipe link), WhatsApp (whatsapp://send?text=), Facebook, Twitter, Pinterest, Telegram. Include option to attach generated PDF to email shares.
+Ingredients: structured list with quantities, units, optional alternatives; "add all to shopping list."
+Steps: numbered steps with optional timers per step; "start cook mode" toggles step-by-step full-screen.
+Yield scaling: adjust servings; scale ingredient quantities dynamically.
+Unit toggle: metric/imperial switch; persist preference in user settings/local storage.
+Nutrition Facts Panel (comprehensive): Display per serving - Calories (kcal), Protein (g), Carbohydrates (g), Fat (g), Fiber (g), Sugar (g), Sodium (mg), Cholesterol (mg), Vitamins (A, C, D, B12), Minerals (Iron, Calcium, Potassium), allergens list, dietary flags (vegetarian, vegan, gluten-free, dairy-free, nut-free, keto, paleo). Show macronutrient pie chart visualization. Store in Recipe.nutrition as JSON.
+Notes: tips, storage info, substitutions.
+Actions: favorite, rate/review, print-friendly view, share (OG + Twitter cards).
+Display recipe metadata: Category, Cuisine, Meal Course, Country as badges/chips for better discovery and filtering.
+Suggested Recipes Section: "You might also like" carousel showing 6-8 related recipes based on similar cuisine, category, meal course, or tags. Use collaborative filtering and content-based recommendations.
+Collections: curated lists (e.g., “30-minute dinners”). Grid of recipes, description, cover image.
+Submit recipe:
+Authenticated form with image upload, rich text for steps, ingredient parser with quantity/unit fields, tag selection, preview.
+Server-side validation, moderation queue; admin approval triggers revalidation.
+Favorites and reviews:
+Users can favorite recipes and leave star ratings + text reviews.
+Reviews show author avatar, date, rating; pagination.
+Shopping list:
+Combine ingredients from selected recipes, auto-group by category (produce, dairy, etc.).
+Allow check-off and quantity adjustments; printable and shareable link.
+Accessibility and UX:
+
+Color contrast compliant; focus states and skip-to-content link.
+Keyboard navigable filters and cook mode; ARIA roles for interactive components.
+Alt text for images; semantic HTML for lists and headings.
+Loading states, error boundaries, and optimistic UI for favorites.
+SEO:
+
+Next.js Metadata API per route; title, description, canonical.
+Open Graph + Twitter cards with recipe images.
+JSON-LD structured data for Recipe and ItemList.
+Clean URLs, pagination rel links, and breadcrumbs.
+Performance:
+
+Use server components for data-fetching pages.
+next/image with responsive sizes and priority where appropriate.
+ISR for listings and recipe pages; choose sensible revalidate times.
+Avoid N+1 queries with Prisma includes; add indexes on searchable columns.
+Bundle splitting; only clientify interactive components.
+Lighthouse score targets: Performance > 90, Accessibility > 95, SEO > 95.
+TypeScript Recipe Type Definitions:
+
+Recipe Categories: "Indian Recipes", "Baby & Toddler Recipes", "World Recipes", "Drink Recipes", "Dessert Recipes", "Basic & Advanced Cooking Techniques", "Cookie & Biscuit Recipes", "Cake Recipes", "Snack Recipes"
+
+Cuisine Types (70+ cuisines): "Indian", "Continental", "North Indian Recipes", "Bengali Recipes", "Maharashtrian Recipes", "Fusion", "Gujarati Recipes", "Italian Recipes", "Karnataka", "Chinese", "Mexican", "South Indian Recipes", "Andhra", "French", "Punjabi", "Chettinad", "Goan Recipes", "Rajasthani", "Indo Chinese", "Asian", "Thai", "Mangalorean", "Hyderabadi", "Mediterranean", "Parsi Recipes", "Kashmiri", "Oriya Recipes", "Mughlai", "Middle Eastern", "Konkan", "North Karnataka", "Sindhi", "North East India Recipes", "African", "Udupi", "Sri Lankan", "Himachal", "Japanese", "Assamese", "Greek", "Bihari", "European", "Malvani", "South Karnataka", "Coorg", "Coastal Karnataka", "Lucknowi", "Malabar", "Sichuan", "Nepalese", "Uttar Pradesh", "Caribbean", "Cantonese", "Tamil Nadu", "Awadhi", "Kongunadu", "Kerala Recipes", "Jewish", "Korean", "Burmese", "Vietnamese", "Malaysian", "American", "Arab", "Uttarakhand-North Kumaon", "Singapore", "Afghan", "Bangladeshi", "Shandong", "British", "Nagaland", "Pakistani", "Hunan", "Indonesian", "Swedish", "Haryana", "Jharkhand"
+
+Meal Course Types: "Appetizer", "Dessert", "One Pot Dish", "South Indian Breakfast", "Side Dish", "Lunch", "Main Course", "World Breakfast", "Brunch", "North Indian Breakfast", "Indian Breakfast", "Snack", "Dinner"
+
+Country Types: "India", "Italy", "China", "Mexico", "France", "Thailand", "Sri Lanka", "Japan", "Greece", "Nepal", "Korea", "Myanmar", "Vietnam", "Malaysia", "United States", "Singapore", "Afghanistan", "Bangladesh", "United Kingdom", "Pakistan", "Indonesia", "Sweden", "Other"
+
+Data model (Prisma):
+
+User: id, name, email, image, role (user/admin), preferences (units, dietaryRestrictions json).
+Recipe: id, slug, title, description, coverImage, servings, prepTimeMin, cookTimeMin, totalTimeMin, difficulty, cuisineId, cuisine (CuisineType enum), category (RecipeCategory enum), mealCourse (MealCourse enum), country (CountryType enum), authorId, publishedAt, status (draft/published), nutrition (json: {calories, protein, carbs, fat, fiber, sugar, sodium, cholesterol, vitamins, minerals, allergens[], dietaryFlags[]}), likes (int), saves (int), viewCount (int).
+Ingredient: id, name, category (produce/dairy/etc), allergens (json).
+RecipeIngredient: id, recipeId, ingredientId, quantity, unit, notes, optional.
+Step: id, recipeId, order, text, timerSeconds, image (optional).
+Tag: id, slug, name.
+RecipeTag: recipeId, tagId.
+Category: id, slug, name.
+Review: id, recipeId, userId, rating (1-5), comment, createdAt.
+Favorite: id, recipeId, userId, createdAt.
+Collection: id, slug, title, description, coverImage, publishedAt.
+CollectionRecipe: collectionId, recipeId.
+ShoppingListItem: id, userId, ingredientId, quantity, unit, notes, checked.
+Add indexes on Recipe.title, Recipe.slug, Tag.slug, Category.slug, Recipe.category, Recipe.cuisine, Recipe.mealCourse, Recipe.country, and a tsvector for full-text search across title/description.
+API routes (handlers in app/api):
+
+POST /api/auth/register, POST /api/auth/login (NextAuth credentials provider).
+GET /api/recipes with filters, sort, pagination; supports query params like q, tag, category (RecipeCategory), cuisine (CuisineType), mealCourse, country, timeMin/max, ratingMin, caloriesMax, proteinMin, diet filters, sort, page, cursor.
+GET /api/recipes/[slug] returns full recipe detail with ingredients, steps, tags, reviews, category, cuisine, mealCourse, country, complete nutrition data.
+GET /api/recipes/[slug]/youtube generates optimized YouTube search URL for the recipe.
+POST /api/recipes/[slug]/grocery-link generates deep links for Swiggy Instamart/Blinkit/Uber Eats with ingredient list.
+GET /api/recipes/[slug]/ubereats generates Uber Eats deep link to search for the recipe/dish on Uber Eats platform (https://www.ubereats.com/search?q=[recipe_title]) with location-based restaurant suggestions.
+GET /api/recipes/[slug]/pdf generates and returns PDF file with recipe details, images, nutrition facts; use @react-pdf/renderer or puppeteer.
+POST /api/recipes/[slug]/share generates share links for email (with PDF attachment option), WhatsApp, social media with pre-filled text and recipe link.
+GET /api/recipes/[slug]/suggestions returns 6-8 related recipes based on cuisine, category, tags, and user preferences using recommendation algorithm.
+POST /api/recipes/[slug]/email sends recipe PDF via email using SMTP/nodemailer with optional personal message.
+POST /api/recipes (authenticated) to submit drafts; admin endpoint to publish.
+POST /api/favorites, DELETE /api/favorites/[recipeId], GET /api/favorites.
+POST /api/reviews, GET /api/reviews?recipeId=...; enforce one rating per user per recipe.
+POST /api/shopping-list, PATCH /api/shopping-list/items/[id], DELETE /api/shopping-list/items/[id], GET /api/shopping-list.
+POST /api/upload-image using Cloudinary/UploadThing; validate file size/type.
+Include Zod validation schemas for all payloads.
+Component architecture (examples; place in app and components):
+
+components/ui: Button, Input, Select, Badge, Modal, Drawer, Tabs, RatingStars, Pagination, Skeleton, Toast, ShareMenu, NutritionChart.
+components/recipes: RecipeCard, RecipeGrid, FilterSidebar, SearchBar, SortMenu, TagChips, CategoryFilter, CuisineFilter, MealCourseFilter, CountryFilter, NutritionFilter, SuggestedRecipes.
+components/recipe-detail: Hero, MetaBar, QuickActionsBar (YouTube + Grocery + Uber Eats + PDF + Share buttons), IngredientList, StepList, CookMode, NutritionFactsPanel (with detailed breakdown and visualization), ActionsBar, ReviewList, ReviewForm, RelatedRecipesCarousel.
+components/integrations: YouTubeSearchButton, GroceryOrderButton (with Swiggy Instamart/Blinkit/Uber Eats options), UberEatsButton (search for dish on Uber Eats), PDFDownloadButton, ShareButton (Email/WhatsApp/Social media), EmailRecipeModal.
+components/pdf: RecipePDFTemplate (server component using @react-pdf/renderer with sections for title, image, ingredients, instructions, nutrition facts, tips).
+components/forms: RecipeForm (with category, cuisine, mealCourse, country selects, NutritionInput for all nutrition fields), IngredientField, StepField, ImageUploader.
+app/(public)/recipes/page.tsx for listing with server components fetching filtered data.
+app/recipes/[slug]/page.tsx for detail; split interactive parts (favorites, reviews, cook mode, YouTube/grocery/PDF/share buttons, suggestions) into client components.
+app/admin/* server components with protected layout; reuse form components; bulk nutrition data import tool.
+State and interactivity:
+
+Use server actions for mutations where suitable (favorites, reviews, submit recipe, generate PDF, send email).
+Client state via React state and usehooks; persist unit preference, dietary restrictions, and sharing preferences in localStorage and user profile.
+Optimistic updates for favorites and shopping list.
+PDF generation: show loading state during generation; cache PDFs server-side with recipe version hash; download or email options.
+Share functionality: track share events for analytics; pre-fill share text with recipe title, description snippet, and link.
+Styling:
+
+Tailwind theme with custom color palette; light/dark mode toggle.
+Responsive breakpoints: grid adjusts 1–4 columns depending on viewport.
+Print stylesheet for recipe detail and shopping list.
+Content seeding:
+
+Seed ~50 recipes covering multiple RecipeCategories (Indian, Baby & Toddler, World, Desserts, Snacks, etc.), CuisineTypes (North Indian, South Indian, Italian, Chinese, Thai, etc.), MealCourses (Breakfast, Lunch, Dinner, Snacks, Desserts), and Countries.
+Ensure diverse difficulty levels, cooking times, and proper categorization using the TypeScript type definitions.
+All recipes MUST include complete nutrition data: calories, macros (protein, carbs, fat), fiber, sugar, sodium, cholesterol, key vitamins and minerals, allergens list, and dietary flags. Use USDA FoodData Central or similar API for accurate nutrition calculation based on ingredients.
+Seed ingredients with categories, allergens, and per-unit nutrition values.
+Seed users: one admin, a few regular users with dietary preferences.
+Seed collections: "Quick dinners," "Vegetarian favorites," "Regional Indian Cuisine," "World Breakfast," "High Protein Meals," "Low Calorie Options," etc.
+Seed reviews, favorites, likes, saves, and view count distribution.
+Security:
+
+Rate-limit public API endpoints.
+Validate inputs with Zod; sanitize rich text fields (steps) to prevent XSS.
+Enforce role-based access control for admin.
+Only allow image uploads from authenticated users; size/type limits.
+Testing:
+
+Unit tests for utilities (quantity scaling, unit conversion), API route validation, Prisma queries.
+Component tests for RecipeCard, Filters, IngredientList scaling logic.
+Playwright e2e: visiting /recipes, applying filters, viewing a recipe, cook mode, submitting a recipe (as user), admin publish flow, favoriting, reviews, shopping list operations.
+Achieve reasonable coverage; include CI config.
+Analytics and observability:
+
+Integrate PostHog or Vercel Analytics for page and event tracking (favorites, cook mode starts, YouTube clicks, grocery orders via Swiggy/Blinkit/Uber Eats, Uber Eats restaurant search clicks, PDF downloads, share actions by platform, recipe suggestions clicked, nutrition filter usage).
+Track conversion funnels: view → favorite → cook mode → share/download PDF → order via delivery platforms.
+Basic logging for API errors and performance metrics.
+A/B testing for recommendation algorithm effectiveness.
+Configuration and DX:
+
+.env.example with DATABASE_URL, NEXTAUTH_SECRET, NEXTAUTH_URL, CLOUDINARY keys, POSTHOG key, SMTP credentials (for email sharing), USDA_API_KEY (for nutrition data), WHATSAPP_BUSINESS_API (optional), UBEREATS_PARTNER_ID (optional, for affiliate links), SWIGGY_PARTNER_ID (optional), BLINKIT_PARTNER_ID (optional), PDF_STORAGE_PATH.
+Scripts: dev, build, start, lint, typecheck, test, e2e, seed, seed:nutrition (populate nutrition data).
+GitHub Actions workflow to run lint, typecheck, unit tests, and Playwright on PR.
+Vercel deployment instructions; prisma migrate in build or post-deploy; configure edge functions for PDF generation.
+Deliverables:
+
+Full Next.js project with the above pages, components, models, API routes, seeds, tests, and CI.
+Clear README with setup steps: install, environment variables, prisma migrate, prisma seed, dev, test, deploy.
+Screenshots or Storybook for key components is a plus.
+Acceptance criteria:
+
+Can browse /recipes, filter by category/cuisine/tags/difficulty/time, sort results, paginate, and see fast, SSR results.
+Navigating to a recipe page shows complete details, scaling, unit toggle, cook mode, and print view.
+Auth flow works; can favorite a recipe, leave a review, and manage a shopping list.
+Submitting a recipe creates a draft; admin can approve/publish; listing updates via ISR.
+Lighthouse scores: Performance > 90, Accessibility > 95, SEO > 95 on key pages.
+All tests pass in CI; deployment succeeds on Vercel.
+Before coding, ask clarifying questions if any assumptions need confirmation (branding, exact color palette, logo, whether to include Algolia now or later, Cloudinary vs UploadThing, and any additional dietary filters). If not provided, choose sensible defaults and proceed.

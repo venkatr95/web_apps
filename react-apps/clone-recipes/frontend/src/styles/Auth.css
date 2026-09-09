@@ -1,0 +1,101 @@
+.auth-container {
+  @apply min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8;
+}
+
+.auth-header {
+  @apply sm:mx-auto sm:w-full sm:max-w-md;
+}
+
+.auth-logo {
+  @apply flex justify-center items-center;
+}
+
+.auth-logo-icon {
+  @apply h-12 w-12 text-emerald-600;
+}
+
+.auth-title {
+  @apply mt-6 text-center text-3xl font-extrabold text-gray-900;
+}
+
+.auth-subtitle {
+  @apply mt-2 text-center text-sm text-gray-600;
+}
+
+.auth-form-container {
+  @apply mt-8 sm:mx-auto sm:w-full sm:max-w-md;
+}
+
+.auth-form {
+  @apply bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10;
+}
+
+.auth-form-error {
+  @apply bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md text-sm;
+}
+
+.auth-form-group {
+  @apply space-y-6;
+}
+
+.auth-form-field {
+  @apply space-y-1;
+}
+
+.auth-remember {
+  @apply flex items-center justify-between;
+}
+
+.auth-remember-checkbox {
+  @apply flex items-center;
+}
+
+.auth-checkbox {
+  @apply h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded;
+}
+
+.auth-checkbox-label {
+  @apply ml-2 block text-sm text-gray-900;
+}
+
+.auth-forgot-password {
+  @apply text-sm;
+}
+
+.auth-forgot-password-link {
+  @apply font-medium text-emerald-600 hover:text-emerald-500;
+}
+
+.auth-submit {
+  @apply w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.auth-alternate {
+  @apply text-sm text-center;
+}
+
+.auth-alternate-text {
+  @apply text-gray-600;
+}
+
+.auth-alternate-link {
+  @apply font-medium text-emerald-600 hover:text-emerald-500;
+}
+
+.password-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon .input-field {
+  width: 100%;
+  padding-right: 2.5rem; /* space for icon */
+}

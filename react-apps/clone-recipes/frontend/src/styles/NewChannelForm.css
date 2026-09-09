@@ -1,0 +1,63 @@
+.new-channel-container {
+  @apply flex flex-col h-full bg-white;
+}
+
+.new-channel-header {
+  @apply flex items-center px-4 py-3 bg-emerald-600;
+}
+
+.new-channel-back {
+  @apply text-white text-2xl mr-4 hover:bg-emerald-700 rounded-full w-8 h-8 flex items-center justify-center;
+}
+
+.new-channel-title {
+  @apply text-xl font-semibold text-white;
+}
+
+.new-channel-form {
+  @apply flex flex-col flex-1;
+}
+
+.new-channel-icon {
+  @apply flex justify-center py-8 bg-gray-50;
+}
+
+.new-channel-icon-button {
+  @apply w-24 h-24 rounded-full bg-gray-200 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors;
+}
+
+.new-channel-camera-icon {
+  @apply w-8 h-8 text-gray-600 mb-1;
+}
+
+.new-channel-icon-text {
+  @apply text-xs text-gray-600 font-medium;
+}
+
+.new-channel-fields {
+  @apply p-4 space-y-4;
+}
+
+.new-channel-field {
+  @apply relative;
+}
+
+.new-channel-input {
+  @apply w-full px-4 py-2 border-b border-emerald-600 focus:outline-none focus:border-emerald-700;
+}
+
+.new-channel-emoji {
+  @apply absolute right-4 top-2 text-xl cursor-pointer;
+}
+
+.new-channel-textarea {
+  @apply w-full h-32 px-4 py-2 bg-gray-50 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500;
+}
+
+.new-channel-submit {
+  @apply mt-auto mx-4 mb-4 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors;
+}
+
+.new-channel-submit.disabled {
+  @apply bg-gray-300 cursor-not-allowed;
+}

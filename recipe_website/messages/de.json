@@ -1,0 +1,364 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "recipes": "Rezepte",
+    "about": "Über uns",
+    "collections": "Sammlungen",
+    "favorites": "Favoriten",
+    "shoppingLists": "Einkaufslisten",
+    "profile": "Profil",
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "signOut": "Abmelden"
+  },
+  "home": {
+    "hero": {
+      "title": "Entdecken Sie Ihr nächstes Lieblingsrezept",
+      "subtitle": "Personalisierte Rezeptempfehlungen basierend auf Ihren Vorlieben, Ernährungsbedürfnissen und verfügbaren Zutaten.",
+      "getStarted": "Loslegen",
+      "browseRecipes": "Rezepte durchsuchen"
+    },
+    "features": {
+      "title": "Warum RecipeHub wählen?",
+      "smartWizard": {
+        "title": "Intelligenter Rezept-Assistent",
+        "description": "Beantworten Sie ein paar Fragen und erhalten Sie personalisierte Rezeptempfehlungen nach Ihrem Geschmack."
+      },
+      "ingredientSearch": {
+        "title": "Zutatenbasierte Suche",
+        "description": "Finden Sie Rezepte basierend auf Zutaten, die Sie bereits in Ihrer Küche haben."
+      },
+      "community": {
+        "title": "Lebendige Community",
+        "description": "Teilen Sie Ihre Kreationen, folgen Sie anderen Food-Enthusiasten und entdecken Sie Trendrezepte."
+      },
+      "mealPlanning": {
+        "title": "Essensplanung",
+        "description": "Organisieren Sie Rezepte in Sammlungen und erstellen Sie Einkaufslisten mit automatischer Zutatenkalkulation."
+      }
+    },
+    "popularRecipes": "Beliebte Rezepte",
+    "viewAll": "Alle Rezepte anzeigen",
+    "categories": {
+      "title": "Nach Kategorie durchsuchen",
+      "subtitle": "Entdecken Sie Rezepte nach Mahlzeitentyp, Küche und Ernährungspräferenzen organisiert"
+    },
+    "cta": {
+      "title": "Bereit, Ihre Rezepte zu teilen?",
+      "description": "Treten Sie unserer Community leidenschaftlicher Köche und Food-Enthusiasten bei. Teilen Sie Ihre Lieblingsrezepte und inspirieren Sie andere.",
+      "joinButton": "RecipeHub heute beitreten"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Über RecipeHub",
+      "subtitle": "Revolutionierung des Heimkochens mit intelligenter Rezeptentdeckung und Essensplanung"
+    },
+    "mission": {
+      "title": "Unsere Mission",
+      "description": "RecipeHub wurde entwickelt, um das Kochen zugänglicher, angenehmer und persönlicher zu machen. Wir glauben, dass jeder verdient, Rezepte zu entdecken, die zu seinem einzigartigen Geschmack, seinen Ernährungsbedürfnissen und seinem Lebensstil passen - ohne den Aufwand endloser Suche."
+    },
+    "features": {
+      "title": "Was uns besonders macht",
+      "personalized": {
+        "title": "Personalisierte Erfahrung",
+        "description": "Unser intelligentes Empfehlungssystem lernt Ihre Vorlieben kennen, um Rezepte vorzuschlagen, die Ihnen gefallen werden."
+      },
+      "wizard": {
+        "title": "Intelligenter Rezept-Assistent",
+        "description": "Beantworten Sie ein paar einfache Fragen und entdecken Sie auf Ihre Bedürfnisse, Zutaten und Ernährungseinschränkungen zugeschnittene Rezepte."
+      },
+      "community": {
+        "title": "Community-gesteuert",
+        "description": "Teilen Sie Ihre kulinarischen Kreationen, folgen Sie anderen Food-Enthusiasten und engagieren Sie sich in einer leidenschaftlichen Koch-Community."
+      },
+      "adaptive": {
+        "title": "Adaptives Lernen",
+        "description": "Je mehr Sie mit RecipeHub interagieren, desto besser werden unsere Empfehlungen, um Ihren Geschmack zu treffen."
+      }
+    },
+    "technology": {
+      "title": "Gebaut mit moderner Technologie",
+      "description": "Nutzung modernster Webtechnologien für ein schnelles, zuverlässiges und angenehmes Benutzererlebnis."
+    },
+    "cta": {
+      "title": "Bereit, Ihr Kochen zu transformieren?",
+      "description": "Schließen Sie sich Tausenden von Hobbyköchen an, die jeden Tag ihre nächsten Lieblingsrezepte entdecken.",
+      "startCooking": "Mit dem Kochen beginnen",
+      "exploreRecipes": "Rezepte erkunden"
+    }
+  },
+  "recipes": {
+    "title": "Alle Rezepte",
+    "search": "Rezepte suchen...",
+    "filters": "Filter",
+    "category": "Kategorie",
+    "sortBy": "Sortieren nach",
+    "newest": "Neueste",
+    "popular": "Beliebt",
+    "rating": "Bewertung",
+    "cookTime": "Kochzeit",
+    "noRecipes": "Keine Rezepte gefunden",
+    "createRecipe": "Rezept erstellen",
+    "viewRecipe": "Rezept anzeigen",
+    "editRecipe": "Rezept bearbeiten",
+    "deleteRecipe": "Rezept löschen",
+    "servings": "Portionen",
+    "prepTime": "Vorbereitungszeit",
+    "totalTime": "Gesamtzeit",
+    "difficulty": "Schwierigkeit",
+    "cuisine": "Küche",
+    "dietaryRestrictions": "Ernährungseinschränkungen"
+  },
+  "recipeWizard": {
+    "title": "Rezept-Assistent",
+    "subtitle": "Finden Sie Ihr perfektes Rezept in nur wenigen Schritten",
+    "notSure": "Nicht sicher, was Sie kochen sollen?",
+    "tellIngredients": "Teilen Sie uns die Zutaten mit, die Sie haben",
+    "promptPlaceholder": "z. B. „Pasta Carbonara“ oder „etwas Komfortables und Würziges“",
+    "ingredientsLabel": "Ihre Zutaten",
+    "suggestedIngredients": "Passende, empfohlene Zutaten:",
+    "filtersTitle": "Filter",
+    "dietType": "Ernährungsart",
+    "mealType": "Mahlzeitentyp",
+    "spiceLevel": "Schärfegrad",
+    "maxPrepTime": "Max. Vorbereitungszeit",
+    "any": "Beliebig",
+    "spice": {
+      "mild": "Mild",
+      "moderate": "Mittel",
+      "mediumSpicy": "Mittel scharf",
+      "hot": "Scharf",
+      "veryHot": "Sehr scharf"
+    },
+    "step1": {
+      "title": "Welche Zutaten haben Sie?",
+      "placeholder": "Zutaten eingeben...",
+      "description": "Geben Sie Zutaten ein, die Sie verwenden möchten"
+    },
+    "step2": {
+      "title": "Welche Art von Mahlzeit planen Sie?",
+      "breakfast": "Frühstück",
+      "lunch": "Mittagessen",
+      "dinner": "Abendessen",
+      "snack": "Snack",
+      "dessert": "Nachtisch"
+    },
+    "step3": {
+      "title": "Gibt es Ernährungseinschränkungen?",
+      "vegetarian": "Vegetarisch",
+      "vegan": "Vegan",
+      "glutenFree": "Glutenfrei",
+      "dairyFree": "Laktosefrei",
+      "nutFree": "Nussfrei",
+      "none": "Keine"
+    },
+    "step4": {
+      "title": "Wie viel Zeit haben Sie?",
+      "under15": "Unter 15 Minuten",
+      "under30": "Unter 30 Minuten",
+      "under60": "Unter 60 Minuten",
+      "over60": "Über 60 Minuten"
+    },
+    "step5": {
+      "title": "Was ist Ihr Kochniveau?",
+      "beginner": "Anfänger",
+      "intermediate": "Fortgeschritten",
+      "advanced": "Experte"
+    },
+    "next": "Weiter",
+    "previous": "Zurück",
+    "findRecipes": "Rezepte finden",
+    "startOver": "Von vorne beginnen"
+  },
+  "footer": {
+    "title": "RecipeHub",
+    "description": "Ihr Ziel zum Entdecken und Teilen köstlicher Rezepte.",
+    "explore": "Entdecken",
+    "browseRecipes": "Rezepte durchsuchen",
+    "collections": "Sammlungen",
+    "about": "Über uns",
+    "account": "Konto",
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "profile": "Profil",
+    "followUs": "Folgen Sie uns",
+    "community": "Bleiben Sie mit unserer Community verbunden",
+    "copyright": "© {year} RecipeHub. Alle Rechte vorbehalten."
+  },
+  "auth": {
+    "signIn": {
+      "title": "Anmelden",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "rememberMe": "Angemeldet bleiben",
+      "forgotPassword": "Passwort vergessen?",
+      "submit": "Anmelden",
+      "noAccount": "Noch kein Konto?",
+      "signUpLink": "Hier registrieren",
+      "orContinueWith": "Oder fortfahren mit"
+    },
+    "signUp": {
+      "title": "Registrieren",
+      "name": "Vollständiger Name",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "confirmPassword": "Passwort bestätigen",
+      "submit": "Registrieren",
+      "haveAccount": "Bereits ein Konto?",
+      "signInLink": "Hier anmelden",
+      "terms": "Mit der Registrierung stimmen Sie unseren Nutzungsbedingungen und Datenschutzrichtlinien zu"
+    }
+  },
+  "profile": {
+    "myRecipes": "Meine Rezepte",
+    "myCollections": "Meine Sammlungen",
+    "myFavorites": "Meine Favoriten",
+    "followers": "Follower",
+    "following": "Folge ich",
+    "editProfile": "Profil bearbeiten",
+    "follow": "Folgen",
+    "unfollow": "Entfolgen",
+    "settings": "Einstellungen"
+  },
+  "collections": {
+    "title": "Sammlungen",
+    "create": "Sammlung erstellen",
+    "edit": "Sammlung bearbeiten",
+    "delete": "Sammlung löschen",
+    "addRecipe": "Rezept hinzufügen",
+    "removeRecipe": "Rezept entfernen",
+    "name": "Sammlungsname",
+    "description": "Beschreibung",
+    "visibility": "Sichtbarkeit",
+    "public": "Öffentlich",
+    "private": "Privat",
+    "noCollections": "Noch keine Sammlungen",
+    "createFirst": "Erstellen Sie Ihre erste Sammlung"
+  },
+  "shoppingList": {
+    "title": "Einkaufslisten",
+    "create": "Einkaufsliste erstellen",
+    "edit": "Einkaufsliste bearbeiten",
+    "delete": "Einkaufsliste löschen",
+    "addItem": "Artikel hinzufügen",
+    "removeItem": "Artikel entfernen",
+    "markComplete": "Als erledigt markieren",
+    "name": "Listenname",
+    "noLists": "Noch keine Einkaufslisten",
+    "createFirst": "Erstellen Sie Ihre erste Einkaufsliste"
+  },
+  "comments": {
+    "title": "Kommentare",
+    "add": "Kommentar hinzufügen",
+    "edit": "Kommentar bearbeiten",
+    "delete": "Kommentar löschen",
+    "reply": "Antworten",
+    "noComments": "Noch keine Kommentare",
+    "beFirst": "Seien Sie der Erste, der kommentiert"
+  },
+  "common": {
+    "add": "Hinzufügen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "create": "Erstellen",
+    "update": "Aktualisieren",
+    "submit": "Absenden",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "confirm": "Bestätigen",
+    "yes": "Ja",
+    "no": "Nein",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "close": "Schließen",
+    "open": "Öffnen",
+    "view": "Ansehen",
+    "share": "Teilen",
+    "print": "Drucken",
+    "download": "Herunterladen",
+    "upload": "Hochladen"
+  },
+  "notifications": {
+    "title": "Benachrichtigungen",
+    "markAllRead": "Alle als gelesen markieren",
+    "noNotifications": "Keine Benachrichtigungen",
+    "newFollower": "folgt Ihnen jetzt",
+    "newComment": "hat Ihr Rezept kommentiert",
+    "newLike": "mag Ihr Rezept",
+    "recipeAdded": "hat ein neues Rezept hinzugefügt"
+  },
+  "admin": {
+    "pendingRecipes": {
+      "title": "Ausstehende Rezepte",
+      "subtitle": "{count, plural, =0 {Keine Rezepte warten auf Genehmigung} one {1 Rezept wartet auf Genehmigung} other {# Rezepte warten auf Genehmigung}}",
+      "noRecipes": {
+        "title": "Alles erledigt!",
+        "description": "Es gibt derzeit keine Rezepte, die auf Genehmigung warten."
+      },
+      "submittedOn": "Eingereicht am",
+      "minutes": "Min",
+      "servings": "Portionen",
+      "author": "Autor",
+      "approve": "Genehmigen",
+      "approving": "Genehmigt...",
+      "reject": "Ablehnen",
+      "rejecting": "Lehnt ab...",
+      "view": "Ansehen",
+      "rejectDialog": {
+        "title": "Rezept ablehnen",
+        "description": "Bitte geben Sie einen Grund für die Ablehnung dieses Rezepts an. Der Autor wird benachrichtigt.",
+        "placeholder": "Ablehnungsgrund eingeben..."
+      },
+      "confirmReject": "Ablehnung bestätigen",
+      "cancel": "Abbrechen"
+    }
+  },
+  "aiGenerator": {
+    "title": "KI‑Rezeptgenerator",
+    "tabs": {
+      "recipe": "REZEPT",
+      "menu": "MENÜ"
+    },
+    "methodTitle": "Wie möchten Sie Ihr Rezept generieren?",
+    "tooltips": {
+      "random": "Lassen Sie die KI zufällig für Sie erstellen",
+      "text": "Geben Sie einen Rezeptnamen oder eine Beschreibung an",
+      "parameters": "Mit Parametern generieren",
+      "image": "Bild (Premium)"
+    },
+    "textPlaceholder": "Geben Sie einen Rezeptnamen ein oder beschreiben Sie, was Sie machen möchten",
+    "parameters": {
+      "title": "Mit Parametern ein Rezept erstellen",
+      "typeOfFood": "Art des Essens wählen",
+      "cuisine": "Küche wählen",
+      "extraLabel": "Zusätzliches Label wählen",
+      "ingredients": "Zutaten wählen",
+      "note": "Alle Parameter sind optional und können leer bleiben."
+    },
+    "quality": {
+      "basic": "BASIS",
+      "plus": "PLUS"
+    },
+    "premium": "Prem",
+    "actions": {
+      "generateRecipe": "REZEPT GENERIEREN",
+      "generateMenu": "MENÜ GENERIEREN",
+      "purchaseCredits": "CREDITS KAUFEN"
+    },
+    "notes": {
+      "publicRecipes": "*Rezepte sind öffentlich. Holen Sie sich Credits für den Privatmodus und Premiumfunktionen.",
+      "menuCost": "*Jedes Rezept im Menü kostet 1 Credit."
+    },
+    "empty": {
+      "recipes": "Es wurden noch keine Rezepte erstellt. Verwenden Sie das Formular links, um eigene Rezepte zu generieren.",
+      "menus": "Es wurden noch keine Menüs erstellt. Verwenden Sie das Formular links, um eigene Menüs zu generieren."
+    }
+  }
+}

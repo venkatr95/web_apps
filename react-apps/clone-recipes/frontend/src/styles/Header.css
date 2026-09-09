@@ -1,0 +1,88 @@
+.header {
+  @apply bg-white shadow-md;
+}
+
+.header-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.header-content {
+  @apply flex justify-between items-center h-16;
+}
+
+.header-logo {
+  @apply flex items-center;
+}
+
+.header-logo-icon {
+  @apply h-8 w-8 text-emerald-600;
+}
+
+.header-logo-text {
+  @apply ml-2 text-xl font-bold text-gray-900;
+}
+
+.header-search {
+  @apply flex-1 max-w-lg mx-8;
+}
+
+.header-search-container {
+  @apply relative;
+}
+
+.header-search-icon {
+  @apply absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400;
+}
+
+.header-search-input {
+  @apply w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500;
+}
+
+.header-actions {
+  @apply flex items-center space-x-4;
+}
+
+.header-notification {
+  @apply h-6 w-6 text-gray-600 cursor-pointer;
+}
+
+.header-profile {
+  @apply flex items-center;
+}
+
+.header-profile-avatar {
+  @apply h-8 w-8 rounded-full;
+}
+
+.header-profile-icon {
+  @apply h-8 w-8 p-1 rounded-full bg-gray-100 text-gray-600;
+}
+
+.header-auth-buttons {
+  @apply space-x-4;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header-search {
+    @apply mx-4;
+  }
+
+  .header-logo-text {
+    @apply hidden;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-search {
+    @apply hidden;
+  }
+
+  .header-auth-buttons {
+    @apply space-x-2;
+  }
+
+  .header-auth-buttons a {
+    @apply text-sm px-3 py-1;
+  }
+}

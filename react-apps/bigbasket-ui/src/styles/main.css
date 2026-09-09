@@ -1,0 +1,43 @@
+@import '../components/Header.css';
+@import '../components/LoginDialog.css';
+@import '../components/LocationDialog.css';
+@import '../components/ProductCard.css';
+@import '../components/ThemeToggle.css';
+@import '../components/Footer.css';
+@import '../pages/Offers.css';
+@import '../pages/SmartBasket.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #84c225;
+    --color-secondary: #d11243;
+    --color-background: #ffffff;
+    --color-text: #1a1a1a;
+    --color-muted: #666666;
+    --color-border: #e5e7eb;
+  }
+
+  .dark {
+    --color-background: #111827;
+    --color-text: #ffffff;
+    --color-muted: #9ca3af;
+    --color-border: #374151;
+  }
+
+  body {
+    @apply bg-[var(--color-background)] text-[var(--color-text)] antialiased;
+  }
+}
+
+@layer components {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

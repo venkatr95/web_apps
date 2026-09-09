@@ -1,0 +1,145 @@
+.smart-basket {
+  min-height: 100vh;
+  background-color: rgb(249 250 251);
+}
+
+.smart-basket--dark {
+  background-color: rgb(17 24 39);
+}
+
+.smart-basket__container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .smart-basket__container {
+    padding: 1.5rem;
+  }
+}
+
+.smart-basket__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: rgb(75 85 99);
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.smart-basket__breadcrumb-link {
+  text-decoration: none;
+  color: rgb(75 85 99);
+}
+
+.smart-basket__breadcrumb-link:hover {
+  color: rgb(17 24 39);
+}
+
+.smart-basket__breadcrumb-current {
+  color: rgb(17 24 39);
+}
+
+.smart-basket__layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .smart-basket__layout {
+    grid-template-columns: minmax(200px, 1fr) 3fr;
+  }
+}
+
+.smart-basket__sidebar {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .smart-basket__sidebar {
+    order: 1;
+  }
+}
+
+.smart-basket__categories {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  padding: 1rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.smart-basket__categories-title {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.smart-basket__categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.smart-basket__category-link {
+  font-size: 0.875rem;
+  color: rgb(75 85 99);
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 150ms;
+}
+
+.smart-basket__category-link:hover {
+  color: #84c225;
+  background-color: rgb(243 244 246);
+}
+
+.smart-basket__main {
+  order: 1;
+}
+
+@media (min-width: 1024px) {
+  .smart-basket__main {
+    order: 2;
+  }
+}
+
+.smart-basket__header {
+  margin-bottom: 1.5rem;
+}
+
+.smart-basket__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.smart-basket__subtitle {
+  font-size: 0.875rem;
+  color: rgb(75 85 99);
+}
+
+.smart-basket__products {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 640px) {
+  .smart-basket__products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .smart-basket__products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

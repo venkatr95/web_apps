@@ -1,0 +1,24 @@
+# Render Blueprint — FastAPI backend for RideMatch
+# Dashboard: https://dashboard.render.com → New → Blueprint
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: ridematch-app
+    runtime: python
+    plan: free
+    region: frankfurt
+    rootDir: server
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"
+      - key: WEB_CONCURRENCY
+        value: "1"
+      # Bike taxi product (also accepts bike-taxis=true)
+      - key: BIKE_TAXIS
+        value: "true"
+      - key: bike-taxis
+        value: "true"

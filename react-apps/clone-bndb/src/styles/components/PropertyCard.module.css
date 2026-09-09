@@ -1,0 +1,63 @@
+.card {
+  @apply group cursor-pointer;
+}
+
+.imageContainer {
+  @apply relative aspect-square rounded-xl overflow-hidden;
+}
+
+.image {
+  @apply object-cover w-full h-full transition group-hover:scale-105;
+}
+
+.navigationArrow {
+  @apply absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white opacity-0 group-hover:opacity-70 flex items-center justify-center transition-opacity;
+}
+
+.navigationDots {
+  @apply absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1;
+}
+
+.dot {
+  @apply w-1.5 h-1.5 rounded-full transition-colors;
+}
+
+.favoriteButton {
+  @apply absolute top-2 right-2 p-2 rounded-full hover:bg-white/10;
+}
+
+.details {
+  @apply mt-3;
+}
+
+.header {
+  @apply flex justify-between items-start;
+}
+
+.location {
+  @apply font-medium;
+}
+
+.rating {
+  @apply flex items-center text-sm;
+}
+
+.type {
+  @apply text-gray-500 text-sm;
+}
+
+.dates {
+  @apply text-gray-500 text-sm;
+}
+
+.price {
+  @apply mt-1;
+}
+
+.originalPrice {
+  @apply line-through text-gray-500 mr-2;
+}
+
+.currentPrice {
+  @apply font-semibold;
+}

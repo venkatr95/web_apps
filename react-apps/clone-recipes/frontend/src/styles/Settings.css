@@ -1,0 +1,92 @@
+.settings-page {
+  @apply flex flex-col h-full bg-white;
+}
+
+.settings-header {
+  @apply flex items-center justify-between px-4 py-3 bg-emerald-600;
+}
+
+.settings-title {
+  @apply text-xl font-semibold text-white;
+}
+
+.settings-close {
+  @apply text-white hover:bg-emerald-700 p-1 rounded-full;
+}
+
+.settings-search-container {
+  @apply p-4 border-b;
+}
+
+.settings-search {
+  @apply relative;
+}
+
+.settings-search-icon {
+  @apply absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400;
+}
+
+.settings-search-input {
+  @apply w-full pl-10 pr-4 py-2 bg-gray-50 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500;
+}
+
+.settings-profile {
+  @apply flex items-center px-6 py-6 border-b;
+}
+
+.settings-avatar {
+  @apply w-16 h-16 rounded-full object-cover;
+}
+
+.settings-profile-info {
+  @apply ml-4;
+}
+
+.settings-profile-name {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.settings-profile-status {
+  @apply text-sm text-gray-500;
+}
+
+.settings-menu {
+  @apply flex-1 py-2 space-y-1 overflow-y-auto;
+}
+
+.settings-menu-item {
+  @apply flex items-center w-full px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors;
+}
+
+.settings-menu-icon {
+  @apply w-5 h-5 mr-3;
+}
+
+.settings-menu-text {
+  @apply text-sm font-medium;
+}
+
+.settings-logout {
+  @apply text-red-600 hover:bg-red-50;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .settings-profile {
+    @apply px-4;
+  }
+
+  .settings-menu-item {
+    @apply px-4;
+  }
+}
+
+@media (max-width: 640px) {
+  .settings-avatar {
+    @apply w-12 h-12;
+  }
+
+  .settings-profile-name {
+    @apply text-base;
+  }
+}
