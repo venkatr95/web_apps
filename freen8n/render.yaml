@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: freen8n
+    env: docker
+    image: n8nio/n8n:latest
+    plan: free
+    region: frankfurt
+    envVars:
+      - key: N8N_PORT
+        value: "10000"
+      - key: PORT
+        value: "10000"
+      - key: WEBHOOK_URL
+        generateValue: true
